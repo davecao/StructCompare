@@ -47,92 +47,56 @@ II. Prerequisite:
 III. Compilation:
 ##################
 
-1. Source code tree
-
-├── Readme.rst  
-├── Readme.txt  
-├── example  (for test)  
-│   ├── 1BGW.pdb  
-│   └── 3L4J.pdb  
-├── jars  
-│   ├── bilab-structure-1.0-jar-with-dependencies.jar (independently executable)  
-│   └── bilab-structure-1.0.jar  
-├── libs  
-│   └── jmol-12.0.22.jar (if jmol is not available online)  
-├── pom.xml  
-└── src  
-    ├── main  
-    │   ├── java  
-    │   │   └── org  
-    │   │       └── bilab
-    │   │           └── tools
-    │   │               ├── SeqStructComp.java
-    │   │               ├── StructComp.java
-    │   │               └── align
-    │   │                   ├── BlastXMLParser.java
-    │   │                   ├── SSCCalculator.java
-    │   │                   └── SscParameters.java
-    │   └── resources
-    │       ├── MANIFEST.MF
-    │       └── MANIFEST.MF~
-    └── test (Not used yet)
-        └── java
-            └── org
-                └── bilab
-                    └── tools
-                        └── AppTest.java
- 
-2. Compilation
-   cmd> cd ROOT (ROOT is same location of pom.xml)
-   cmd> mvn clean	
-   cmd> mvn package
+    cd ROOT (ROOT is same location of pom.xml)
+    mvn clean	
+    mvn package
 
 The executable jar files can be located at 'jars' directory.
 To run bilab-structure-1.0.jar, it needs the lib/*.jars on the java classpath.
 On the contrary,  bilab-structure-1.0-jar-with-dependencies.jar can be run alone since all necessary libraries had been packaged into it.
 i.e.,
-  cmd> java -jar bilab-structure-1.0-jar-with-dependencies.jar [options]
+    cmd> java -jar bilab-structure-1.0-jar-with-dependencies.jar [options]
 
 IV. Usage:
 ##################
 
 usage: java -jar bilab-structures-*.jar [options]
 
-  -a,--mol1 <Required>              The first molecule in PDB format.
-    --alignAlgo <Optional>         The internally used pairwised
-                                   alignment.Default is SW_local.
-                                   NW_global: Needleman-Wunsch/Gotoh.
-                                   SW_local : Smith-Waterman/Gotoh
-                                   GU_linear: GUan_Uberbacher.
-                                   SW_linear: Smith-Waterman/Gotoh with
-                                   smart traceback
-    --alignSeqRes                  If it presents, align the ATOM and
-                                   SEQRES residues when parsing PDB files.
-    --alignXMLfile <Optional>      Pairwised alignment file created from
-                                   external program Blastp. If it is
-                                   given, the internal pairwised sequence
-                                   alignment will not be done.
-  -b,--mol2 <Required>              The second molecule in PDB format.
-  -c1,--chain1 <Optional>           Specify the chain name of the first
+    -a,--mol1 <Required>          The first molecule in PDB format.
+    --alignAlgo <Optional>        The internally used pairwised
+                                  alignment.Default is SW_local.
+                                  NW_global: Needleman-Wunsch/Gotoh.
+                                  SW_local : Smith-Waterman/Gotoh
+                                  GU_linear: GUan_Uberbacher.
+                                  SW_linear: Smith-Waterman/Gotoh with
+                                             smart traceback
+    --alignSeqRes                 If it presents, align the ATOM and
+                                  SEQRES residues when parsing PDB files.
+    --alignXMLfile <Optional>     Pairwised alignment file created from
+                                  external program Blastp. If it is
+                                  given, the internal pairwised sequence
+                                  alignment will not be done.
+    -b,--mol2 <Required>              The second molecule in PDB format.
+    -c1,--chain1 <Optional>           Specify the chain name of the first
                                    molecule in PDB format.
                                    If not given, all alpha carbon atoms
                                    will be picked up for pairwise
                                    structure alignment.
-  -c2,--chain2 <Optional>           Specify the chain name of the second
+    -c2,--chain2 <Optional>           Specify the chain name of the second
                                    molecule in PDB format. Optioned.
                                    If not given, all alpha carbon atoms
                                    will be picked up for pairwise
                                    structure alignment.
-  -e,--showElapsedTime              Print out elapsed time (boolean).
-  -g,--gui                          Show the pairwise comparison in graphic
+    -e,--showElapsedTime              Print out elapsed time (boolean).
+    -g,--gui                          Show the pairwise comparison in graphic
                                    user interface.
-  -ge,--gapExt <Optional>           Gap Extension penalty for
+    -ge,--gapExt <Optional>           Gap Extension penalty for
                                    Sequence-based structural
                                    alignment.Default is 1
-  -go,--gapOpen <Optional>          Gap Open penalty for Sequence-based
+    -go,--gapOpen <Optional>          Gap Open penalty for Sequence-based
                                    structural alignment.Default is 5
-  -h,--help                         Print out usage.
-  -m,--method <Default=1>           comparison method(number):
+    -h,--help                         Print out usage.
+    -m,--method <Default=1>           comparison method(number):
                                    1. FATCAT rigid.
                                    2. FATCAT flexible.
                                    3. Combinatorial extenstion(CE).
@@ -140,20 +104,20 @@ usage: java -jar bilab-structures-*.jar [options]
                                    5. CE circular permutation side
                                    chain(CECPSideChain).
                                    6. Sequence-based comparison
-  -mem,--showMemoryInfo             Print out used memory info(boolean).
-  -o,--output <Optional>            The output file name.
-  --parseCAonly                  If it presents, only CA atoms will be
-                                   attained when parsing PDB files.
-  --parseSecStruct               If it presents, parse secondary
-                                   structures when parsing PDB files.
-  -t,--outputFormat <Default=xml>   The output file format:
-                                   Raw format: raw.
-                                   xml format: xml.
-                                   nice summary: pretty.
-  -u,--using-gui                    Do the pairwise comparison with a
-                                   simple GUI. If this option is
-                                   specified, others options will be
-                                   ignored.
+    -mem,--showMemoryInfo             Print out used memory info(boolean).
+    -o,--output <Optional>            The output file name.
+    --parseCAonly                  If it presents, only CA atoms will be
+                                     attained when parsing PDB files.
+    --parseSecStruct               If it presents, parse secondary
+                                     structures when parsing PDB files.
+    -t,--outputFormat <Default=xml>   The output file format:
+                                     Raw format: raw.
+                                     xml format: xml.
+                                     nice summary: pretty.
+    -u,--using-gui                    Do the pairwise comparison with a
+                                     simple GUI. If this option is
+                                     specified, others options will be
+                                     ignored.
 
 e.g., chain A of 1CDG  v.s. chain B of 1TIM
  
