@@ -45,7 +45,7 @@ II. Prerequisite:
 
 III. Compilation:
 ##################
-
+::
     cd ROOT (ROOT is same location of pom.xml)  
     
     mvn clean	 
@@ -123,9 +123,13 @@ Result: the attributes in root node of the output xml
 ::
 
 method="jFatCat_rigid"  
+
 probability="1.15e-01"   
+
 alignScore="186.62"  
+
 totalRmsdOpt="3.92"  
+
 identity="0.0498"  
 
 The above result is same as the pre-calculated results on the PDB site
