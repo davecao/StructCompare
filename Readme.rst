@@ -1,9 +1,9 @@
 Structure Comparison Tools for Java ver. 1.00
 ##############################################
 
-Version 1.00,  initialized at 5 Jan 2012 by Wei Cao  
+:Authors: Wei Cao davecao@bi.a.u-tokyo.ac.jp  
+:Version: 1.00 initialized on 5 Jan 2012  
 
-davecao@bi.a.u-tokyo.ac.jp  
 
 I. Description
 ##################
@@ -77,10 +77,13 @@ usage: java -jar bilab-structures-*.jar [options]
                                    given, the internal pairwised sequence
                                    alignment will not be done.
     --mol2, -b <Required>          The second molecule in PDB format.
-    --chain1, -c1 <Optional>       Specify the chain name of the first molecule in PDB format. 
-                                    If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
-    --chain2, -c2 <Optional>       Specify the chain name of the second molecule in PDB format. Optioned.
-                                    If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
+
+    --chain1,-c1<Optional>       Specify the chain name of the first molecule in PDB format. 
+                                   If not given, all alpha carbon atoms will be picked up 
+                                   for pairwise structure alignment.
+    --chain2,-c2<Optional>       Specify the chain name of the second molecule in PDB format. Optioned.
+                                   If not given, all alpha carbon atoms will be picked up
+                                   for pairwise structure alignment.
     --showElapsedTime, -e          Print out elapsed time (boolean).
     --method,-m <Default=1>        comparison method(number):
                                         1. FATCAT rigid.
