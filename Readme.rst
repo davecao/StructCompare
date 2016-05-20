@@ -76,19 +76,14 @@ usage: java -jar bilab-structures-*.jar [options]
                                   external program Blastp. If it is
                                   given, the internal pairwised sequence
                                   alignment will not be done.
-    --mol2,-b <Required>         The second molecule in PDB format.
-    --chain1,-c1 <Optional>      Specify the chain name of the first molecule in PDB format.
-                                  If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
-    --chain2,-c2 <Optional>       Specify the chain name of the second molecule in PDB format. Optioned.
-                                  If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
+    --mol2, -b <Required>              The second molecule in PDB format.
+    --chain1,-c1 <Optional>               Specify the chain name of the first molecule in PDB format. If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
+    --chain2,-c2 <Optional>               Specify the chain name of the second molecule in PDB format. Optioned. If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
     --showElapsedTime, -e              Print out elapsed time (boolean).
     --gui, -g                          Show the pairwise comparison in graphic
                                    user interface.
-    --gapExt, -ge <Optional>           Gap Extension penalty for
-                                   Sequence-based structural
-                                   alignment.Default is 1
-    --gapOpen, -go <Optional>          Gap Open penalty for Sequence-based
-                                   structural alignment.Default is 5
+    --gapExt, -ge <Optional>           Gap Extension penalty for Sequence-based structural alignment.Default is 1
+    --gapOpen, -go <Optional>          Gap Open penalty for Sequence-based structural alignment.Default is 5
     --help,-h                         Print out usage.
     --method,-m <Default=1>           comparison method(number):
                                    1. FATCAT rigid.
