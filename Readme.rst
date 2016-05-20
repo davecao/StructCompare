@@ -66,10 +66,10 @@ usage: java -jar bilab-structures-*.jar [options]
 
     --mol1, -a <Required>          The first molecule in PDB format.
     --alignAlgo <Optional>        The internally used pairwised alignment. Default is SW_local.
-                                  NW_global: Needleman-Wunsch/Gotoh.
-                                  SW_local : Smith-Waterman/Gotoh
-                                  GU_linear: GUan_Uberbacher.
-                                  SW_linear: Smith-Waterman/Gotoh with smart traceback
+                                  *NW_global*: Needleman-Wunsch/Gotoh.
+                                  *SW_local*: Smith-Waterman/Gotoh
+                                  *GU_linear*: GUan_Uberbacher.
+                                  *SW_linear*: Smith-Waterman/Gotoh with smart traceback
     --alignSeqRes                 If it presents, align the ATOM and
                                   SEQRES residues when parsing PDB files.
     --alignXMLfile <Optional>     Pairwised alignment file created from
@@ -82,18 +82,15 @@ usage: java -jar bilab-structures-*.jar [options]
     --chain2,-c2 <Optional>            Specify the chain name of the second molecule in PDB format. Optioned.
                                        If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
     --showElapsedTime, -e              Print out elapsed time (boolean).
-    --gui, -g                          Show the pairwise comparison in graphic
-                                   user interface.
     --gapExt, -ge <Optional>              Gap Extension penalty for Sequence-based structural alignment.Default is 1
     --gapOpen, -go <Optional>              Gap Open penalty for Sequence-based structural alignment.Default is 5
     --method,-m <Default=1>           comparison method(number):
-                                   1. FATCAT rigid.
-                                   2. FATCAT flexible.
-                                   3. Combinatorial extenstion(CE).
-                                   4. CE circular permutation(CECP).
-                                   5. CE circular permutation side
-                                   chain(CECPSideChain).
-                                   6. Sequence-based comparison
+                                      1. FATCAT rigid.
+                                      2. FATCAT flexible.
+                                      3. Combinatorial extenstion(CE).
+                                      4. CE circular permutation(CECP).
+                                      5. CE circular permutation side chain(CECPSideChain).
+                                      6. Sequence-based comparison
     --showMemoryInfo, -mem             Print out used memory info(boolean).
     --output, -o<Optional>            The output file name.
     --parseCAonly                  If it presents, only CA atoms will be
@@ -104,6 +101,7 @@ usage: java -jar bilab-structures-*.jar [options]
                                      Raw format: raw.
                                      xml format: xml.
                                      nice summary: pretty.
+    --gui, -g                          Show the pairwise comparison in graphic user interface.
     --using-gui, -u                  Do the pairwise comparison with a
                                      simple GUI. If this option is
                                      specified, others options will be
