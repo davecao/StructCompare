@@ -77,26 +77,29 @@ usage: java -jar bilab-structures-*.jar [options]
                                   given, the internal pairwised sequence
                                   alignment will not be done.
     --mol2, -b <Required>              The second molecule in PDB format.
-    --chain1, -c1 <Optional>           Specify the chain name of the first molecule in PDB format. 
-                                       If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
-    --chain2,-c2 <Optional>            Specify the chain name of the second molecule in PDB format. Optioned.
-                                       If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
+    --chain1, -c1 <Optional>                Specify the chain name of the first molecule in PDB format. 
+                                             If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
+    --chain2,-c2 <Optional>                 Specify the chain name of the second molecule in PDB format. Optioned.
+                                             If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
     --showElapsedTime, -e              Print out elapsed time (boolean).
-    --gapExt, -ge <Optional>              Gap Extension penalty for Sequence-based structural alignment.Default is 1
-    --gapOpen, -go <Optional>              Gap Open penalty for Sequence-based structural alignment.Default is 5
     --method,-m <Default=1>           comparison method(number):
-                                      1. FATCAT rigid.
-                                      2. FATCAT flexible.
-                                      3. Combinatorial extenstion(CE).
-                                      4. CE circular permutation(CECP).
-                                      5. CE circular permutation side chain(CECPSideChain).
-                                      6. Sequence-based comparison
+                                        1. FATCAT rigid.
+                                        2. FATCAT flexible.
+                                        3. Combinatorial extenstion(CE).
+                                        4. CE circular permutation(CECP).
+                                        5. CE circular permutation side chain(CECPSideChain).
+                                        6. Sequence-based comparison
     --showMemoryInfo, -mem             Print out used memory info(boolean).
     --output, -o<Optional>            The output file name.
     --parseCAonly                  If it presents, only CA atoms will be
                                      attained when parsing PDB files.
     --parseSecStruct               If it presents, parse secondary
                                      structures when parsing PDB files.
+    --gapExt, -ge <Optional>    Gap Extension penalty for Sequence-based 
+                                  structural alignment.Default is 1
+    --gapOpen, -go <Optional>   Gap Open penalty for Sequence-based 
+                                  structural alignment.Default is 5
+
     --outputFormat, -t <Default=xml>   The output file format:
                                      Raw format: raw.
                                      xml format: xml.
@@ -116,9 +119,13 @@ e.g., chain A of 1CDG  v.s. chain B of 1TIM
 Result: the attributes in root node of the output xml 
 
 method="jFatCat_rigid"  
+
 probability="1.15e-01"   
+
 alignScore="186.62"  
+
 totalRmsdOpt="3.92"  
+
 identity="0.0498"  
 
 The above result is same as the pre-calculated results on the PDB site
