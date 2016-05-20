@@ -34,14 +34,8 @@ II. Prerequisite:
 2. Java Runtime - version 1.6 or later 
 3. Install the Jmol into local repository (If jmol is not available)
 
-    prompt> cd path<--(root of source, see Source code tree)
-
-    prompt> mvn install:install-file \
-                -DgroupId=org.jmol \
-                -DartifactId=jmol \
-                -Dversion=12.0.22 \
-                -Dpackaging=jar \
-                -Dfile=./libs/Jmol.jar
+    prompt> cd path  <--(root of source)
+    prompt> mvn install:install-file -DgroupId=org.jmol -DartifactId=jmol -Dversion=12.0.22  -Dpackaging=jar -Dfile=./libs/Jmol.jar
 
 III. Compilation:
 ##################
