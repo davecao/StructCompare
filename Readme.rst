@@ -78,10 +78,10 @@ usage: java -jar bilab-structures-*.jar [options]
                                    alignment will not be done.
     --mol2, -b <Required>          The second molecule in PDB format.
 
-    --chain1,-c1<Optional>       Specify the chain name of the first molecule in PDB format. 
+    --chain1,-c1<Optional>         Specify the chain name of the first molecule in PDB format. 
                                    If not given, all alpha carbon atoms will be picked up 
                                    for pairwise structure alignment.
-    --chain2,-c2<Optional>       Specify the chain name of the second molecule in PDB format. Optioned.
+    --chain2,-c2<Optional>         Specify the chain name of the second molecule in PDB format. Optioned.
                                    If not given, all alpha carbon atoms will be picked up
                                    for pairwise structure alignment.
     --showElapsedTime, -e          Print out elapsed time (boolean).
@@ -120,12 +120,11 @@ e.g., chain A of 1CDG  v.s. chain B of 1TIM
 
 
 Result: the attributes in root node of the output xml 
-::
-method="jFatCat_rigid"  
-probability="1.15e-01"   
-alignScore="186.62"  
-totalRmsdOpt="3.92"  
-identity="0.0498"  
+|method="jFatCat_rigid"  
+|probability="1.15e-01"   
+|alignScore="186.62"  
+|totalRmsdOpt="3.92"  
+|identity="0.0498"  
 
 The above result is same as the pre-calculated results on the PDB site
 http://www.rcsb.org/pdb/workbench/showPrecalcAlignment.do?action=pw_fatcat&name1=1CDG.A&name2=1TIM.B
