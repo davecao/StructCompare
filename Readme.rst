@@ -120,11 +120,13 @@ e.g., chain A of 1CDG  v.s. chain B of 1TIM
 
 
 Result: the attributes in root node of the output xml 
-|method="jFatCat_rigid"  
-|probability="1.15e-01"   
-|alignScore="186.62"  
-|totalRmsdOpt="3.92"  
-|identity="0.0498"  
+::
+
+method="jFatCat_rigid"  
+probability="1.15e-01"   
+alignScore="186.62"  
+totalRmsdOpt="3.92"  
+identity="0.0498"  
 
 The above result is same as the pre-calculated results on the PDB site
 http://www.rcsb.org/pdb/workbench/showPrecalcAlignment.do?action=pw_fatcat&name1=1CDG.A&name2=1TIM.B
