@@ -1,9 +1,8 @@
 Structure Comparison Tools for Java ver. 1.00
 ##############################################
 
-Version 1.00  
-initialized 5 Jan 2012  
-Wei Cao  
+Version 1.00,  initialized at 5 Jan 2012 by Wei Cao  
+
 davecao@bi.a.u-tokyo.ac.jp  
 
 I. Description
@@ -31,12 +30,12 @@ see also: (PDB comparison tools)
 II. Prerequisite:
 ##################
 
- 1. Apache Maven
-    A software project management and comprehension tool.
- 2. Java Runtime
-    - version 1.6 or later 
- 3. Install the Jmol into local repository (If jmol is not available)
+1. Apache Maven - A software project management and comprehension tool.
+2. Java Runtime - version 1.6 or later 
+3. Install the Jmol into local repository (If jmol is not available)
+
     prompt> cd path<--(root of source, see Source code tree)
+
     prompt> mvn install:install-file \
                 -DgroupId=org.jmol \
                 -DartifactId=jmol \
@@ -47,14 +46,17 @@ II. Prerequisite:
 III. Compilation:
 ##################
 
-    cd ROOT (ROOT is same location of pom.xml)
-    mvn clean	
-    mvn package
+    cd ROOT (ROOT is same location of pom.xml)  
+    
+    mvn clean	 
+    
+    mvn package  
 
 The executable jar files can be located at 'jars' directory.
 To run bilab-structure-1.0.jar, it needs the lib/*.jars on the java classpath.
 On the contrary,  bilab-structure-1.0-jar-with-dependencies.jar can be run alone since all necessary libraries had been packaged into it.
 i.e.,
+
     cmd> java -jar bilab-structure-1.0-jar-with-dependencies.jar [options]
 
 IV. Usage:
@@ -74,18 +76,18 @@ usage: java -jar bilab-structures-*.jar [options]
                                   external program Blastp. If it is
                                   given, the internal pairwised sequence
                                   alignment will not be done.
-    --mol2, -b <Required>         The second molecule in PDB format.
-    --chain1, -c1 <Optional>      Specify the chain name of the first molecule in PDB format.
+    --mol2,-b <Required>         The second molecule in PDB format.
+    --chain1,-c1 <Optional>      Specify the chain name of the first molecule in PDB format.
                                   If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
     --chain2,-c2 <Optional>       Specify the chain name of the second molecule in PDB format. Optioned.
                                   If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
     --showElapsedTime, -e              Print out elapsed time (boolean).
     --gui, -g                          Show the pairwise comparison in graphic
                                    user interface.
-    --gapExt, -ge<Optional>           Gap Extension penalty for
+    --gapExt, -ge <Optional>           Gap Extension penalty for
                                    Sequence-based structural
                                    alignment.Default is 1
-    --gapOpen, -go<Optional>          Gap Open penalty for Sequence-based
+    --gapOpen, -go <Optional>          Gap Open penalty for Sequence-based
                                    structural alignment.Default is 5
     --help,-h                         Print out usage.
     --method,-m <Default=1>           comparison method(number):
