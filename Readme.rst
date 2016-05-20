@@ -21,12 +21,13 @@ a. Yuzhen Ye & Adam Godzik (2003) Flexible structure alignment by chaining align
   
 b. Shindyalov IN, Bourne PE (1998) Protein structure alignment by incremental combinatorial extension (CE) of the optimal path. Protein Eng 11: 739-747 
 
->see also: (PDB comparison tools)
->   Andreas Prlic; Spencer Bliven; Peter W. Rose; Wolfgang F. Bluhm; Chris Bizon; 
->   Adam Godzik; Philip E. Bourne (2010)
->   Pre-calculated protein structure alignments at the RCSB PDB website
->   Bioinformatics 26: 2983-2985
-      
+.. ..
+see also: (PDB comparison tools)
+    Andreas Prlic; Spencer Bliven; Peter W. Rose; Wolfgang F. Bluhm; Chris Bizon; 
+    Adam Godzik; Philip E. Bourne (2010)
+    Pre-calculated protein structure alignments at the RCSB PDB website
+    Bioinformatics 26: 2983-2985
+  
 II. Prerequisite:
 ##################
 
@@ -48,21 +49,21 @@ III. Compilation:
 
 1. Source code tree
 
-├── Readme.rst
-├── Readme.txt
-├── example
-│   ├── 1BGW.pdb
-│   └── 3L4J.pdb
-├── jars
-│   ├── bilab-structure-1.0-jar-with-dependencies.jar (independently executable)
-│   └── bilab-structure-1.0.jar
-├── libs
-│   └── jmol-12.0.22.jar (if jmol is not available online)
-├── pom.xml
-└── src
-    ├── main
-    │   ├── java
-    │   │   └── org
+├── Readme.rst  
+├── Readme.txt  
+├── example  (for test)  
+│   ├── 1BGW.pdb  
+│   └── 3L4J.pdb  
+├── jars  
+│   ├── bilab-structure-1.0-jar-with-dependencies.jar (independently executable)  
+│   └── bilab-structure-1.0.jar  
+├── libs  
+│   └── jmol-12.0.22.jar (if jmol is not available online)  
+├── pom.xml  
+└── src  
+    ├── main  
+    │   ├── java  
+    │   │   └── org  
     │   │       └── bilab
     │   │           └── tools
     │   │               ├── SeqStructComp.java
