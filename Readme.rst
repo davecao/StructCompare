@@ -78,14 +78,14 @@ usage: java -jar bilab-structures-*.jar [options]
                                    alignment will not be done.
     --mol2, -b <Required>          The second molecule in PDB format.
 
-    --chain1,-c1<Optional>         Specify the chain name of the first molecule in PDB format. 
+    --chain1 <Optional>         Specify the chain name of the first molecule in PDB format. 
                                    If not given, all alpha carbon atoms will be picked up 
                                    for pairwise structure alignment.
-    --chain2,-c2<Optional>         Specify the chain name of the second molecule in PDB format. Optioned.
+    --chain2 <Optional>         Specify the chain name of the second molecule in PDB format. Optioned.
                                    If not given, all alpha carbon atoms will be picked up
                                    for pairwise structure alignment.
     --showElapsedTime, -e          Print out elapsed time (boolean).
-    --method,-m <Default=1>        comparison method(number):
+    --method, -m <Default=1>        Select comparison method(number):
                                         1. FATCAT rigid.
                                         2. FATCAT flexible.
                                         3. Combinatorial extenstion(CE).
@@ -98,9 +98,9 @@ usage: java -jar bilab-structures-*.jar [options]
                                      attained when parsing PDB files.
     --parseSecStruct               If it presents, parse secondary
                                      structures when parsing PDB files.
-    --gapExt, -ge <Optional>    Gap Extension penalty for Sequence-based 
+    --gapExt <Optional>    Gap Extension penalty for Sequence-based 
                                   structural alignment.Default is 1
-    --gapOpen, -go <Optional>   Gap Open penalty for Sequence-based 
+    --gapOpen <Optional>   Gap Open penalty for Sequence-based 
                                   structural alignment.Default is 5
 
     --outputFormat, -t <Default=xml>   The output file format:
