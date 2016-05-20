@@ -77,10 +77,10 @@ usage: java -jar bilab-structures-*.jar [options]
                                   given, the internal pairwised sequence
                                   alignment will not be done.
     --mol2, -b <Required>              The second molecule in PDB format.
-    --chain1, -c1 <Optional>                Specify the chain name of the first molecule in PDB format. 
-                                             If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
-    --chain2,-c2 <Optional>                 Specify the chain name of the second molecule in PDB format. Optioned.
-                                             If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
+    --chain1, -c1 <Optional>    Specify the chain name of the first molecule in PDB format. 
+                                  If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
+    --chain2, -c2 <Optional>    Specify the chain name of the second molecule in PDB format. Optioned.
+                                  If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
     --showElapsedTime, -e              Print out elapsed time (boolean).
     --method,-m <Default=1>           comparison method(number):
                                         1. FATCAT rigid.
