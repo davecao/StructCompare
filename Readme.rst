@@ -45,12 +45,12 @@ II. Prerequisite:
 
 III. Compilation:
 ##################
-::
-    cd ROOT (ROOT is same location of pom.xml)  
+
+cd ROOT (ROOT is same location of pom.xml)  
     
-    mvn clean	 
-    
-    mvn package  
+mvn clean	 
+
+mvn package  
 
 The executable jar files can be located at 'jars' directory.
 To run bilab-structure-1.0.jar, it needs the lib/*.jars on the java classpath.
@@ -80,10 +80,10 @@ usage: java -jar bilab-structures-*.jar [options]
 
     --chain1 <Optional>         Specify the chain name of the first molecule in PDB format. 
                                    If not given, all alpha carbon atoms will be picked up 
-                                   for pairwise structure alignment.
+                                   for pairwise structure alignment. (-c1 for short)
     --chain2 <Optional>         Specify the chain name of the second molecule in PDB format. Optioned.
                                    If not given, all alpha carbon atoms will be picked up
-                                   for pairwise structure alignment.
+                                   for pairwise structure alignment.(-c2 for short)
     --showElapsedTime, -e          Print out elapsed time (boolean).
     --method, -m <Default=1>        Select comparison method(number):
                                         **1**. FATCAT rigid.
@@ -99,9 +99,9 @@ usage: java -jar bilab-structures-*.jar [options]
     --parseSecStruct               If it presents, parse secondary
                                      structures when parsing PDB files.
     --gapExt <Optional>    Gap Extension penalty for Sequence-based 
-                                  structural alignment.Default is 1
+                                  structural alignment. (-ge) Default is 1
     --gapOpen <Optional>   Gap Open penalty for Sequence-based 
-                                  structural alignment.Default is 5
+                                  structural alignment. (-go) Default is 5
 
     --outputFormat, -t <Default=xml>   The output file format:
                                      Raw format: raw.
