@@ -65,24 +65,24 @@ IV. Usage:
 usage: java -jar bilab-structures-*.jar [options]
 
     --mol1, -a <Required>          The first molecule in PDB format.
-    --alignAlgo <Optional>        The internally used pairwised alignment. Default is SW_local.
-                                  *NW_global*: Needleman-Wunsch/Gotoh.
-                                  *SW_local*: Smith-Waterman/Gotoh
-                                  *GU_linear*: GUan_Uberbacher.
-                                  *SW_linear*: Smith-Waterman/Gotoh with smart traceback
-    --alignSeqRes                 If it presents, align the ATOM and
-                                  SEQRES residues when parsing PDB files.
-    --alignXMLfile <Optional>     Pairwised alignment file created from
-                                  external program Blastp. If it is
-                                  given, the internal pairwised sequence
-                                  alignment will not be done.
-    --mol2, -b <Required>              The second molecule in PDB format.
-    --chain1, -c1 <Optional>    Specify the chain name of the first molecule in PDB format. 
-                                  If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
-    --chain2, -c2 <Optional>    Specify the chain name of the second molecule in PDB format. Optioned.
-                                  If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
-    --showElapsedTime, -e              Print out elapsed time (boolean).
-    --method,-m <Default=1>           comparison method(number):
+    --alignAlgo <Optional>         The internally used pairwised alignment. Default is SW_local.
+                                     *NW_global*: Needleman-Wunsch/Gotoh.
+                                     *SW_local*: Smith-Waterman/Gotoh
+                                     *GU_linear*: GUan_Uberbacher.
+                                     *SW_linear*: Smith-Waterman/Gotoh with smart traceback
+    --alignSeqRes                  If it presents, align the ATOM and
+                                   SEQRES residues when parsing PDB files.
+    --alignXMLfile <Optional>      Pairwised alignment file created from
+                                   external program Blastp. If it is
+                                   given, the internal pairwised sequence
+                                   alignment will not be done.
+    --mol2, -b <Required>          The second molecule in PDB format.
+    --chain1, -c1 <Optional>       Specify the chain name of the first molecule in PDB format. 
+                                    If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
+    --chain2, -c2 <Optional>       Specify the chain name of the second molecule in PDB format. Optioned.
+                                    If not given, all alpha carbon atoms will be picked up for pairwise structure alignment.
+    --showElapsedTime, -e          Print out elapsed time (boolean).
+    --method,-m <Default=1>        comparison method(number):
                                         1. FATCAT rigid.
                                         2. FATCAT flexible.
                                         3. Combinatorial extenstion(CE).
@@ -117,15 +117,11 @@ e.g., chain A of 1CDG  v.s. chain B of 1TIM
 
 
 Result: the attributes in root node of the output xml 
-
+::
 method="jFatCat_rigid"  
-
 probability="1.15e-01"   
-
 alignScore="186.62"  
-
 totalRmsdOpt="3.92"  
-
 identity="0.0498"  
 
 The above result is same as the pre-calculated results on the PDB site
