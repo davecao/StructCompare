@@ -40,11 +40,11 @@ II. Prerequisite:
 III. Compilation:
 ##################
 
-cd ROOT (ROOT is same location of pom.xml)  
+  cd ROOT (ROOT is same location of pom.xml)  
     
-mvn clean	 
+  mvn clean	 
 
-mvn package  
+  mvn package  
 
 The executable jar files can be located at 'jars' directory.
 To run bilab-structure-1.0.jar, it needs the lib/*.jars on the java classpath.
