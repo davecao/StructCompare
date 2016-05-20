@@ -1,10 +1,10 @@
 Structure Comparison Tools for Java ver. 1.00
 ##############################################
 
-Version 1.00
-5 Jan 2012
-Wei Cao 
-davecao@bi.a.u-tokyo.ac.jp
+Version 1.00  
+initialized 5 Jan 2012  
+Wei Cao  
+davecao@bi.a.u-tokyo.ac.jp  
 
 I. Description
 ##################
@@ -17,19 +17,15 @@ Structure Comparison Tools for Java is developed for pairwise comparison of prot
 4. CE circular permutation (CeCP), which sets default parameters to be appropriate for finding circular permutations.  
 
 Reference:
-a. Yuzhen Ye & Adam Godzik (2003)
-   Flexible structure alignment by chaining aligned fragment pairs allowing twists.  
-   Bioinformatics vol.19 suppl. 2. ii246-ii255.   
+a. Yuzhen Ye & Adam Godzik (2003) Flexible structure alignment by chaining aligned fragment pairs allowing twists. Bioinformatics vol.19 suppl. 2. ii246-ii255.   
   
-b. Shindyalov IN, Bourne PE (1998)
-   Protein structure alignment by incremental combinatorial extension (CE) of 
-   the optimal path. Protein Eng 11: 739-747 
+b. Shindyalov IN, Bourne PE (1998) Protein structure alignment by incremental combinatorial extension (CE) of the optimal path. Protein Eng 11: 739-747 
 
-see also: (PDB comparison tools)
-   Andreas Prlic; Spencer Bliven; Peter W. Rose; Wolfgang F. Bluhm; Chris Bizon; 
-   Adam Godzik; Philip E. Bourne (2010)
-   Pre-calculated protein structure alignments at the RCSB PDB website
-   Bioinformatics 26: 2983-2985
+>see also: (PDB comparison tools)
+>   Andreas Prlic; Spencer Bliven; Peter W. Rose; Wolfgang F. Bluhm; Chris Bizon; 
+>   Adam Godzik; Philip E. Bourne (2010)
+>   Pre-calculated protein structure alignments at the RCSB PDB website
+>   Bioinformatics 26: 2983-2985
       
 II. Prerequisite:
 ##################
@@ -51,68 +47,56 @@ III. Compilation:
 ##################
 
 1. Source code tree
-  |(root)	
-  |-pom.xml
-  |-src
-     |-main/java/org/bilab/tools
-         |- java
-              |-org
-                 |-bilab
-                      |-tools
-                          |- StructComp.java
-                          |- SeqStructComp.java
-                          |- align
-                              |- BlastXMLParser.java
-                              |- SSCCalculator.java
-                              |- SscParameters.java
-     |-test/... (Not used yet)
-  |-libs
-     |-jmol-12.0.22.jar (Compiled by Wei Cao)
-  |-pdbs
-     |- several sample pdbs
-  |-sequences
-     |- fasta files of those pdbs stored in the pdbs directory
-        and the blastp output in the XML format. 
-        (blastp is from the blast+ package)
-	 
+
+├── Readme.rst
+├── Readme.txt
+├── example
+│   ├── 1BGW.pdb
+│   └── 3L4J.pdb
+├── jars
+│   ├── bilab-structure-1.0-jar-with-dependencies.jar (independently executable)
+│   └── bilab-structure-1.0.jar
+├── libs
+│   └── jmol-12.0.22.jar (if jmol is not available online)
+├── pom.xml
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── org
+    │   │       └── bilab
+    │   │           └── tools
+    │   │               ├── SeqStructComp.java
+    │   │               ├── StructComp.java
+    │   │               └── align
+    │   │                   ├── BlastXMLParser.java
+    │   │                   ├── SSCCalculator.java
+    │   │                   └── SscParameters.java
+    │   └── resources
+    │       ├── MANIFEST.MF
+    │       └── MANIFEST.MF~
+    └── test (Not used yet)
+        └── java
+            └── org
+                └── bilab
+                    └── tools
+                        └── AppTest.java
+ 
 2. Compilation
    cmd> cd ROOT (ROOT is same location of pom.xml)
    cmd> mvn clean	
    cmd> mvn package
-   
-3. Binary tree
-  |-pom.xml
-  |-src
-     |-main/java/org/bilab/tools
-         |- java
-              |-org
-                 |-bilab
-                      |-tools
-                          |- StructComp.java
-                          |- SeqStructComp.java
-                          |- align
-                              |- BlastXMLParser.java
-                              |- SSCCalculator.java
-                              |- SscParameters.java
-  |	 |-test/... (Not used yet)
-  |-target
-     |- lib/...(bilab-structure-1.0.jar is depended on these jar files)
-     |- ... (mediate files, not necessary)
-  |-jars (automatically created and can be removed before starting to build the program.)
-     |-	bilab-structure-1.0-jar-with-dependencies.jar (independently executable)
-     |- bilab-structure-1.0.jar (set jars/lib on system path, then it can be executed.)
 
 The executable jar files can be located at 'jars' directory.
 To run bilab-structure-1.0.jar, it needs the lib/*.jars on the java classpath.
-On the contrary,  bilab-structure-1.0-jar-with-dependencies.jar can be run alone since 
-all necessary libraries had been packaged into it.
+On the contrary,  bilab-structure-1.0-jar-with-dependencies.jar can be run alone since all necessary libraries had been packaged into it.
 i.e.,
   cmd> java -jar bilab-structure-1.0-jar-with-dependencies.jar [options]
 
 IV. Usage:
 ##################
 
-usage: java -jar bilab-structures-*.jar
+usage: java -jar bilab-structures-*.jar [options]
+
   -a,--mol1 <Required>              The first molecule in PDB format.
     --alignAlgo <Optional>         The internally used pairwised
                                    alignment.Default is SW_local.
@@ -172,49 +156,40 @@ usage: java -jar bilab-structures-*.jar
 
 e.g., chain A of 1CDG  v.s. chain B of 1TIM
  
-cmd>java -jar jars/bilab-structure-1.0-jar-with-dependencies.jar -a pdbs/1MI7.pdb -b pdbs/3WRP.pdb -c1 R -c2 A 
+    java -jar jars/bilab-structure-1.0-jar-with-dependencies.jar -a pdbs/1MI7.pdb -b pdbs/3WRP.pdb -c1 R -c2 A 
 
 
 Result: the attributes in root node of the output xml 
-======================
+
 method="jFatCat_rigid"
 probability="1.15e-01" 
 alignScore="186.62"
 totalRmsdOpt="3.92"
 identity="0.0498"
-========================
 
 The above result is same as the pre-calculated results on the PDB site
 http://www.rcsb.org/pdb/workbench/showPrecalcAlignment.do?action=pw_fatcat&name1=1CDG.A&name2=1TIM.B
 
 
-###########################
 IV. Run Jmol directly 
 ###########################
 
->java -classpath path/bilab-structure-1.0-jar-with-dependencies.jar org.openscience.jmol.app.Jmol
+    java -classpath path/bilab-structure-1.0-jar-with-dependencies.jar org.openscience.jmol.app.Jmol
 
 
-##################################
 V. Run SimpleAlignmentGUI directly 
 ##################################
 
->java -jar jars/bilab-structure-1.0-jar-with-dependencies.jar -u
+    java -jar jars/bilab-structure-1.0-jar-with-dependencies.jar -u
 
-##############################################################################################
-VI. Note for using the option --alignXMLfile with -m 6 (-m 6 means using the method, jSeqBase)
-##############################################################################################
+.. ..
+Note for using the option --alignXMLfile with -m 6 (-m 6 means using the method, jSeqBase)
+
 To use an external pre-existed pairwise-alignment file (blastp), 
 you need to set -outfmt to use 5, i.e. produce results in the xml format. 
 So far, this program can only read the xml output from blastp.
 
-a. The program will use the first HSP segment to create the rotation matrix if there are several
-   Hsp exists.
-b. The program will terminate when it meets "No hit found" in the PSA alignment file 
-   generated by blastp.
+a. The program will use the first HSP segment to create the rotation matrix if there are several Hsp exists.
+
+b. The program will terminate when it meets "No hit found" in the PSA alignment file generated by blastp.
  
-
-#####################################
-VII. Test 
-#####################################
-
