@@ -139,7 +139,7 @@ public class StructComp
   // create options
   @SuppressWarnings("static-access")
   private void createOpts() {
-		//Options opt = new Options();
+    //Options opt = new Options();
     opt.addOption(
                   OptionBuilder.withLongOpt("method")
                   .withDescription("comparison method(number): \n"+
